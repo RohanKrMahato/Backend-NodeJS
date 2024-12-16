@@ -1,9 +1,10 @@
 const http = require("http");
 const fs = require("fs");
 
-const myServer = http.createServer((req , res)=>{
+const myServer = http.createServer((req , res)=>{ // create server takes a callback function, when there is request on the server it will run this callback
 
     const log = `${Date.now()} : ${req.url} : New Request Recieved \n`;
+
     fs.appendFile('log.txt' , log , (err , data)=>{
 
         switch(req.url){
@@ -18,9 +19,7 @@ const myServer = http.createServer((req , res)=>{
 
         }
         
-        
     })
-
 
     // console.log(req.headers)
     // console.log(req)
@@ -29,7 +28,17 @@ const myServer = http.createServer((req , res)=>{
 });
 
 const PORT = 8000;
-myServer.listen(8000, ()=>{
+myServer.listen(8000, ()=>{ // callback function will execute if server start properly
     console.log(`Server started at port no ${PORT} `);
 })
 
+
+
+// const http = require('http');
+
+// const myserver=http.createServer((req,res)=>{
+//     console.log("New Request Recieved");
+//     res.end("hello from server");
+// });
+
+// myserver.listen(8000,()=>{console.log("server Started")});

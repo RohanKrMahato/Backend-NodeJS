@@ -22,4 +22,8 @@
 ![http methods rule](./4.png)
 
 
+If you are making a REST API make sure the endpoint never change, i.e route should be only 1
+
+![not a rest api](./image2.png)
+![this is a rest api](./image3.png)
 
