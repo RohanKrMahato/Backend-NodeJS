@@ -9,29 +9,25 @@ app.use(express.urlencoded({extended:false}));
 
 app.get('/about',(req,res)=>{
 
-    // JSON = {"rohan":"rhl","boo":500} note: this is json object representation
-    // (for array representation just enclose [{"rohan":"rhl","boo":500}]) 
-
-    // `{"rohan":"rhl","boo":500}` this is json string representation
+    //JSON stands for Javascript Object Notation (it can be array of objects as well, note it)
 
     const obj = {rohan:"rhl","boo":55} // note: this is a object not a json
-    const A=JSON.stringify(obj);
 
-    const JsonString= `{"rohan":"rhl","boo":500}` //note: this is a json string representation
-    const B=JSON.parse(JsonString);
+    const A=JSON.stringify(obj); // Here A = '{"rohan":"rhl","boo":55}'  [note it is a string, (string with JSON format) ]
 
- //   const JsonObject={"rohan":"rhl","boo":500} this is a json object, but since it is not a json string it can't be parsed
-
- //   const obj = {rohan:"rhl","boo":55} since this is not a json, this can't be parsed
+    const B=JSON.parse(A); // here B = {rohan:'rhl', boo:55} (note this is a object)
 
     console.log(A,B);
+    console.log(typeof(A), typeof(B));
+    
 })
-
 
 app.post('/about',(req,res)=>{ 
     users.push({...req.body,id: users.length+1});
 
     fs.writeFile('./MOCK_DATA.json',JSON.stringify(users),(err,data)=>{
+    // here JSON.stringify(users) is converting it to string and writing to the MOCK_DATA  (remember string is a data-type)
+
         if(err)res.end('err')
         else res.json(users)
     })
