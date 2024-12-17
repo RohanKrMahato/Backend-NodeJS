@@ -7,7 +7,15 @@ const app = express();
 const PORT = 8000;
 
 //Middlewares
-app.use(express.urlencoded({extended:false}));
+app.use(express.urlencoded({extended:false})); //{ extended: false } this is an option object (object literal) not a parameter (its like a passing an argument)
+
+//express.urlencoded({extended:false}) this returns a middleware, just like we define a custom middle ware
+
+// { extended: false }:
+
+//     This option determines how the URL-encoded data is parsed.
+//     When extended: false, it uses the querystring library to parse the data. This means that nested objects or arrays are not supported in the form data (it can only handle key-value pairs, such as key=value).
+//     If extended: true, it uses the qs library, which allows for complex objects and arrays to be encoded in the query string and parsed correctly. This would enable handling more complex nested data structures.
 
 app.use((req , res , next) =>{
 
