@@ -31,7 +31,7 @@ app.get('/api/users', (req, res)=>{
 
 app.route('/api/users/:id').get((req, res)=>{
     
-    const id = Number(req.params.id);
+    const id = Number(req.params.id); ////////////////////note this parameter syntax
     const user = users.find(user => user.id === id);
 
     // 500 server error
@@ -58,6 +58,8 @@ app.post('/api/users' , (req , res)=>{
 
     //Status code 201
     return res.status(201).json({status: "sucess", id:users.length});
+///// note this syntax
+
 });
 
 

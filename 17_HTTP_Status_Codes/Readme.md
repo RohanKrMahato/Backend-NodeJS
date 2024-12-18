@@ -24,3 +24,10 @@
     - 502 - Bad Gateway
     - 503 - Service Unavailable
 
+# Nodemon (npm install nodemon)
+
+Since we need to restart our server each time we are making changes, we can install nodemon, I will automatically restart it.
+
+```
+nodemon is a tool that helps develop Node.js based applications by automatically restarting the node application when file changes in the directory are detected.
+```

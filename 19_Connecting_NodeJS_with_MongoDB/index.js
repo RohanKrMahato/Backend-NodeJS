@@ -1,22 +1,23 @@
-const express = require("express");
+ const express = require("express");
 const mongoose = require('mongoose');
 
 const app = express();
 const PORT = 8000;
 
-//Connection
-mongoose.connect('mongodb://127.0.0.1:27017/learning')
+//Connection (Note: this is a Asynchronous function)
+mongoose.connect('mongodb://127.0.0.1:27017/learning') // here "learning" is the name of database
+
 .then(()=> console.log("MongoDB Connected"))
 .catch((err) => console.log("Mongo Error" , err));
 
 //Schema
-const userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({// const userSchema = new mongoose.Schema({},{}) 
     firstName: {
         type: String,
         required : true,
     },
     lastName : {
-        type: String,
+        type: String, // since we didn't put required here, It can be present or it may not be depending on the user preference
     },
     email:{
         type: String,
@@ -31,7 +32,12 @@ const userSchema = new mongoose.Schema({
 )
 
 // Model
-const User = mongoose.model('user' , userSchema);
+const User = mongoose.model('user' , userSchema); // we are making a MODEL here
+
+// Model Naming
+
+// The model name in Mongoose (in this case, user) is typically used to define the structure of a single document. When you specify 'user' in mongoose.model('user', userSchema), Mongoose infers the plural collection name (users) by default.
+// Mongoose automatically pluralizes the name of the model when it maps it to the collection name in the database. So, User corresponds to the users collection, even though the model name is singular.
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
@@ -100,7 +106,7 @@ app.post('/api/users' , async(req , res)=>{
     return res.status(201).json({msg: "Success"})
 });
 
-
+ // this is also Asynchronous
 app.listen(PORT , ()=>{
     console.log(`Server started at Port ${PORT}`)
 })

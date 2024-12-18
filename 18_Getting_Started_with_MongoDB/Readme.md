@@ -4,7 +4,7 @@ No-SQL Document Based Database.
 
 Strong Support for Aggregation Pipes.
 
-Works on BSON format.
+Works on `BSON` format.
 
 Best for Node Applications.
 
