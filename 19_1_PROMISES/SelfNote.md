@@ -1,4 +1,4 @@
-![Follow this video for PROMISE](https://www.youtube.com/watch?v=NJwRQgsu1Q8)
+<iframe width="560" height="315" src="https://www.youtube.com/watch?v=NJwRQgsu1Q8" frameborder="0" allowfullscreen></iframe>
 
 ### The Promise `object` represents the eventual completion (or failure) of an asynchronous operation and its resulting value.
 

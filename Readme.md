@@ -21,8 +21,8 @@ Following Mastering NodeJS tutorial of Piyush Garg.
 | 16. | What are Http Headers in API | <ul> <li>What are http Headers in API ?</li> </ul> |
 | 17. | Http Status Codes | <ul><li>Status Code</li> <li> Types of Responses </li> </ul> |
 | 18. | Getting Started with MongoDB |<ul><li>What is MongoDB ?</li> <li>Commands of MongoDB</li> </ul> |
-| 19.1| Promise | <ul><li>What is Promise?</li> <li>How to consume ?</li><ul> |
 | 19. | Connecting NodeJS with MongoDB | <ul><li>What is Mongoose?</li> <li>What are the schema?</li><ul> |
+| 19.1| Promise | <ul><li>What is Promise?</li> <li>How to consume ?</li><ul> |
 | 20. | Model View Controller in NodeJS | <ul><li>Model View Controller</li></ul>|
 | 21. | Custom URl Shortner | <ul><li>Started the URL Shortner Project</li></ul>|
 | 22. | Server Side Rendering with EJS and NodeJS | <ul><li> Uses EJS for Server side rendering for URL Shortner</li></ul> |
