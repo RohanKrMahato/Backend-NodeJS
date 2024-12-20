@@ -9,9 +9,20 @@ const {
 
 const router = express.Router();
 
+// initially we were doing , const app = express();
+
+// but here we are using router
+
+// these routes are helpful to maintain a large number of routes
+/*--------------------------------------------------------------------------------------------
+app.route('/user/').get(()=>{}) 
+  
+is equivalent to
+
+app.use("/users" , userRouter) where inside userRouter we have .route('/').get(()=>{})
+-------------------------------------------------------------------------------------------*/
 
 //REST Api
-
 router
 .route('/')
 .get(handleGetAllUsers)

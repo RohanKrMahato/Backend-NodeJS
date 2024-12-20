@@ -6,7 +6,6 @@ const PORT = 8000;
 
 //Connection (Note: this is a Asynchronous function)
 mongoose.connect('mongodb://127.0.0.1:27017/learning') // here "learning" is the name of database
-
 .then(()=> console.log("MongoDB Connected"))
 .catch((err) => console.log("Mongo Error" , err));
 
@@ -31,8 +30,10 @@ const userSchema = new mongoose.Schema({// const userSchema = new mongoose.Schem
 {timestamps: true}
 )
 
-// Model
+// Model (this is synchronous, since This line simply registers a model with Mongoose. It doesn't interact with the database or involve any asynchronous operations.)
+
 const User = mongoose.model('user' , userSchema); // we are making a MODEL here
+// Note: this line itself is not a asynchronous, but if we do User.find({}), User.create({}) ... etc ... then it will try to find in the MongoDB database, therefore User.find({}), User.create({})...etc... will return a Promise
 
 // Model Naming
 
@@ -41,7 +42,6 @@ const User = mongoose.model('user' , userSchema); // we are making a MODEL here
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
-
 
 
 //Routes
@@ -61,7 +61,7 @@ app.get('/users', async(req, res)=>{
 
 app.get('/api/users', async(req, res)=>{
 
-    const allDbUsers = await User .find({});
+    const allDbUsers = await User .find({}); // Now using the Model we are manipulating the MongoDB database, hence it is returning promise.
     return res.json(allDbUsers);
 
 })
