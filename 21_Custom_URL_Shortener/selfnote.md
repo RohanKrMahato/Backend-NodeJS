@@ -1,0 +1,1 @@
+![dynamic_route_explaination](./dynamic_route.png)

@@ -18,7 +18,12 @@ app.get("/:shortId", async (req, res) => {
       {
         shortId : shortId,
       },
-      {
+      { // Note: $push operator is used to append an item to an array field
+        
+        // $push: {
+        //   arrayField: value
+        // }
+        
         $push: {
           visitHistory: {
             timestamp: Date.now(),
@@ -26,6 +31,8 @@ app.get("/:shortId", async (req, res) => {
         },
       }
     );
+    // Note: res.redirect();
+
     res.redirect(entry.redirectURL);
  });
 
