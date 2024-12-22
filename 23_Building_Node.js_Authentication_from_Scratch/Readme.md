@@ -26,7 +26,7 @@ Server can transfer the unique id using cookies, respose , headers to the cilent
 [urls](./models/url.js)
 ![image](./ref%20command%20in%20mongoose.png)
 
-The ref command is used so that we can apply the Populate() function.
+The ref command is used so that we can apply the populate() function offered by mongoose.
 Example--->
 ```
 const Temp = await url.find({}).populate('createdBy');
