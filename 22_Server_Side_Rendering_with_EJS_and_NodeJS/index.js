@@ -2,7 +2,7 @@ const express = require("express");
 const { connectToMongoDB } = require('./connect')
 const urlRoute = require('./routes/url')
 const staticRoute = require('./routes/staticRoute')
-const path = require('path')
+const path = require('path') // note
 const URL = require('./models/url');
 
 const app = express();
@@ -11,8 +11,9 @@ const PORT = 8001;
 connectToMongoDB('mongodb://127.0.0.1:27017/short-url')
 .then (()=> console.log("MongoDB connected"))
 
-app.set("view engine" , "ejs")
-app.set("views" , path.resolve("./views"))
+app.set("view engine" , "ejs") // set the view engine
+
+app.set("views" , path.resolve("./views")) // telling where we have kept our EJS files
 
 app.use(express.json())
 app.use(express.urlencoded({extended:false})) //for form data
@@ -41,7 +42,11 @@ app.get('/test' , async(req , res)=>{
   //   </html>`
     
   // )
-  
+
+
+  // Note: res.render('EJS file name');
+  // or
+  // res.render('EJS file name', {variable we want to pass in the EJS file});
   return res.render('home',{
     urls: allUrls,
   })

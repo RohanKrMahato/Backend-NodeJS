@@ -17,8 +17,9 @@ const urlSchema = new mongoose.Schema(
         }}
     ],
     createdBy : {
-        type: mongoose.Schema.Types.ObjectId,
+        type: mongoose.Schema.Types.ObjectId, // here we put the ID of the document (present in the 'users' collection) which we want to refer.
         ref: 'users'
+        // referencing that, the ID which we provided belong to the 'users' collection.
     }
 } , 
 { timestamp : true }

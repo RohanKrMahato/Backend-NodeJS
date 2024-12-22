@@ -22,3 +22,18 @@ Server can transfer the unique id using cookies, respose , headers to the cilent
 
 ![express flow works](./images/expressflow.png)
 
+## 'ref' command in mongoose (below image is shown, is part of schema 'url')
+[urls](./models/url.js)
+![image](./ref%20command%20in%20mongoose.png)
+
+The ref command is used so that we can apply the Populate() function.
+Example--->
+```
+const Temp = await url.find({}).populate('createdBy');
+console.log(Temp);
+```
+In the output we can see that the 'createdBy' is populated.
+
+## workflow of this lecture (Statefull-authentication)
+
+![notes](./notes.jpeg)

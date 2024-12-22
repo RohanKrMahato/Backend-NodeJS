@@ -12,11 +12,12 @@
 </head>
 <body>
     <h1>URL Shortner</h1>
-    <% if(locals.id){
-        %>
+    <!-- these are EJS syntax -->
+    <% if(locals.id){ %> <!-- using locals we are accessing the variables which are passed to EJS -->
+
         <p> URL Generated : http://localhost:8001/url/<%= id%></p>
-         <%
-    } %>
+
+         <% } %>
     <div>
         <form action="/url" method="post">
             <label for="/url">Enter your Original URL</label>

@@ -1,3 +1,8 @@
+# learn How to use EJS
+
+![learn_EJS](https://www.geeksforgeeks.org/use-ejs-as-template-engine-in-node-js/)
+We make EJS files in the View folder. Basically EJS files are HTML files.
+
 # Templating Engines in Server-Side Rendering (SSR)
 
 Templating engines are used to generate dynamic HTML pages by injecting data into templates on the server before sending the final HTML to the client.
@@ -75,7 +80,8 @@ This helps prevent security vulnerabilities by ensuring that user-generated cont
 
 ## Common Templating Engines in SSR
 
-- **EJS (Embedded JavaScript):** Allows embedding JavaScript logic into HTML templates.
+- **EJS (Embedded JavaScript):** (npm install ejs)
+Allows embedding JavaScript logic into HTML templates.
 - **Pug (formerly Jade):** Uses indentation-based syntax for cleaner templates.
 - **Handlebars:** A logic-less templating engine that focuses on simplicity and separation of concerns.
 - **Mustache:** Similar to Handlebars but with an even more minimalistic approach.
