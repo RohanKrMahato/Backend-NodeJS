@@ -16,5 +16,7 @@
 
 - Jwt will generate a token, we will put the token in the cookie of the user
 
+Reference files -> 
 [auth.js](./service/auth.js)
+
 [uer.js](./controllers/user.js)
